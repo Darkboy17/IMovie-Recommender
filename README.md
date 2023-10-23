@@ -12,7 +12,7 @@ It uses an algorithm called "Cosine Similarity" from a plethora of recommendatio
 - A movie carousel
 
 ## Screenshot
-![Screenshot](https://github.com/Darkboy17/IMovie-Recommender/assets/26376179/666e6f3a-e0f5-4a88-8393-13a7168e5ca6)
+![IM_recommend_screenshot](https://github.com/Darkboy17/IMovie-Recommender/assets/26376179/90e987ab-5523-467a-bd12-29b8f31e91db)
 
 ## Getting Started
 
