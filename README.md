@@ -33,8 +33,11 @@ cd [directory where you extracted the file downloaded in step 1]
 cd web2py
 python web2py.py
 ```
-5) A web2py Web Framework window will appear.
-6) For password, type 'root' or anythng you prefer.
-7) A new window will be loaded on your browser of choice.
-8) Now, enter this link: http://127.0.0.1:8000/movies/static/htmlindex.html
+5) A web2py Web Framework window will appear as shown below.
+
+![webp2ywindow](https://github.com/Darkboy17/IMovie-Recommender/assets/26376179/dbcfe7ca-ea3c-4431-b5b6-f0075ec1f06f)
+
+6) For password, type 'root' or anything you prefer.
+7) Click "start server" and a new window will be loaded on your browser of choice.
+8) Now, go to this link on your browser or right-click on it here and "Open in New Tab" : http://127.0.0.1:8000/movies/static/htmlindex.html
 9) Done! Now you can start using the app as normal users would.
