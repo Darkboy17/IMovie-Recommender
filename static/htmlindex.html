@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IMovie Recommender</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="logo/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/mystyles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div id="topbar">
+        <img id="logo" src="logo/final_logo_nobg.png" alt="Logo">
+    </div>
+
+    <div id="leftbar" class="color2">
+        <a href="https://github.com/Darkboy17" target="_blank"
+            title="Visit the developers Github to access the source code">
+            <img src="icons/github.png" class="icons" alt="Github" />
+        </a>
+        <a>
+            <img src="icons/facebook.png" class="icons" alt="Facebook" title="Facebook link not provided" />
+        </a>
+        <a>
+            <img src="icons/instagram.png" class="icons" alt="Instagram" title="Instagram link not provided" />
+        </a>
+        <a>
+            <img src="icons/settings.png" title="Change app settings" class="icons" alt="Settings" id='settingsIcon' />
+        </a>
+    </div>
+
+    <div id="container">
+
+        <div id="wrapper" class="color2">
+            <div id="search-container">
+                <input type="search" id="search" name="search"
+                    title="Type a name of the movie to filter, so that you can rate it"
+                    placeholder="Search from a list of 10,000+ movies to rate them...">
+                <!-- The ul will be inserted here by the JavaScript -->
+            </div>
+
+            <div id="tags">
+
+            </div>
+
+            <div id="carousel">
+                <h2 id="heading">List of Movies</h2>
+                <i id="carousel-control" class="fas fa-pause"></i>
+                <div id="content-wrapper">
+                    <div id="content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="recommendations">
+            <h2 id='rec-heading' class="color2">Movie recommendations based on your past ratings</h2>
+            <div id="recommendations-content">
+            </div>
+            <div id="countContainer">
+                <div id="movie-count" class="color2"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="tour-guide">
+        <h2 id='tourHeading'>Welcome to Movie Recommender!</h2>
+        <p id="guide-content"></p>
+        <button id="next-button">Next</button>
+    </div>
+
+    <div id="settings">
+        <div class="topbar">
+            <h2>Settings</h2>
+            <button id="close"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="settborder">
+            <div class="setting">
+                <label for="numMovies">Number of Movies to recommend:</label>
+                <select id="numMovies">
+                </select>
+            </div>
+            <div class="setting">
+                <label for="appTour">Enable App tour:</label>
+                <input type="checkbox" id="checkBox">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="overlay"></div>
+</body>
+<script src="js/script.js"></script>
+
+</html>

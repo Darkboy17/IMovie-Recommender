@@ -1,0 +1,99 @@
+<script type="text/javascript">
+
+  // Initialization of new Vue instance
+  var app = new Vue({
+        // Element on HTML where Vue instance will be mounted
+        el: '#app',
+        // Data properties of the Vue instance
+        data: {
+          all_movies:[], // Holds all movie data
+          search:"", // Holds the search query
+          ratings:{}, // Holds the ratings given by the user
+          recommendations:[] // Holds the recommended movies
+        },
+        // Components used in the Vue instance
+        components:{
+          StarRating: VueStarRating.default // Star rating component for rating movies
+        },
+        // Lifecycle hook that is called after the instance has been created
+        created: function(){
+              // For debugging purpose
+              console.log("here")
+              var self=this;
+              // Fetching movie data from JSON file
+              $.getJSON('movies.json', function (data) {
+                self.all_movies = data
+              });
+          },
+          // Methods that will be used in the Vue instance
+          methods:{
+            // Method for adding rating to a movie
+            addrating: function(rating,item){
+              id = item["movieId"]
+              item["rating"] = rating
+              Vue.set(this.ratings,id,item)
+              this.search = ""
+              this.getrecommendations()
+            },
+            // Method for removing a movie from the list
+            removemovie: function(movie){
+              id = movie["movieId"]
+              // For debugging purpose
+              console.log(this.ratings[id])
+              Vue.delete(this.ratings,id)
+              this.getrecommendations()
+            },
+            // Method for getting recommendations based on the ratings
+            getrecommendations: function(){
+              ratings = this.ratings
+              // Making POST request to get recommendations
+              axios.post('/movies/default/call/json/get_recommendations', {
+                      watched_movies:ratings
+                    })
+                    .then(function(response){
+                      recommendation = response.data
+                      // For debugging purpose
+                       console.log("Recommendations : ", recommendation)
+                       
+                      // Looping through the recommendations to find the movie in all_movies
+                      _.forEach(recommendation,function(movie_title){
+                      movie = _.filter(this.all_movies, {'title':movie_title})[0]
+                        self.recommendations.push(movie)
+                      });
+                    })
+                    .catch(function(e) {
+                      console.log("Error:",e)
+                    });
+            }
+          },
+        // Computed properties that will be used in the Vue instance
+        computed:{
+                // Computed property for search results
+                searchResults(){
+                  // If the search query is less than 2 characters, return an empty array
+                  if(this.search.length < 2){
+                    return []
+                  }
+                  all_movies = (this.all_movies || [])
+                  self = this;
+                  // Filtering the movies based on the search query
+                  result = all_movies.filter(item => {
+                      movie_name = item["title"]
+                      pos = movie_name.toString().toLowerCase().indexOf(self.search.toLowerCase())
+                      if (pos > -1){
+                          return -1
+                       }else{
+                        return 0;
+                       }
+                       });    
+                 // If the results are more than 100, only return the first 100 results
+                 if(result.length > 100){
+                  result = result.slice(0,100)
+                 } 
+                 return result
+                 }
+        }        
+      });
+  
+  </script>
+  

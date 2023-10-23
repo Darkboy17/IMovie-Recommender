@@ -1,0 +1,787 @@
+.color1 {
+  background-color: #cfceeb;
+}
+
+.color2 {
+  background-color: #d5d9c7;
+}
+
+.color3 {
+  background-color: #401300;
+}
+
+.color4 {
+  background-color: #6f5d47;
+}
+
+.color5 {
+  background-color: #a6a7ad;
+}
+
+
+#container {
+  display: flex;
+  padding-top: 50px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background: rgb(247, 247, 247);
+}
+
+@keyframes animateBackground {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  }
+}
+
+#heading {
+  color: rgb(94, 93, 93);
+  margin-right: 0px;
+}
+
+#rec-heading {
+  color: rgb(94, 93, 93);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+#wrapper {
+  margin-top: 40px;
+  margin-left: 50px;
+  /* Replace with the value you want */
+  width: 100%;
+  max-width: 975px;
+  position: relative;
+  box-shadow: 1px 5px 5px 5px rgb(222, 221, 221);
+  border-radius: 10px;
+
+}
+
+.recommended_movie_card {
+  position: relative;
+
+}
+
+.poster {
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+#recommendations-content {
+  overflow-y: scroll;
+}
+
+#recommendations-content::-webkit-scrollbar {
+  width: 1px;
+}
+
+#recommendations-content {
+  /*-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: thin;
+  /* Firefox */
+  scrollbar-color: #7e7e7e41 #f1f1f1;
+}
+
+#recommendations-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Color of the track */
+}
+
+#recommendations-content::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color of the scroll thumb */
+}
+
+#recommendations-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Color of the scroll thumb on hover */
+}
+
+.recommended_movie_card_title {
+  white-space: auto;
+  text-wrap: balance;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 5px #fff, 0 0 5px #1a191a;
+}
+
+.recommended_movie_card:hover .poster {
+  filter: brightness(0.25) blur(1px)
+}
+
+.recommended_movie_card:hover .recommended_movie_card_title {
+  opacity: 1;
+
+}
+
+#carousel {
+  position: relative;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 20px;
+  margin-top: 1px;
+  border-radius: 10px;
+}
+
+#carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+#prev,
+#next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+#prev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+#next {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+#content {
+
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+#content-wrapper {
+  overflow: auto;
+  width: 100%;
+}
+
+#content-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#content-wrapper {
+  -ms-overflow-style: none;
+  /* Internet Explorer and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.carousel_movie_card {
+  width: 180px;
+  height: 300px;
+  border-radius: 5px;
+  position: relative;
+  background-color: lightgray;
+}
+
+.recommended_movie_card {
+  width: 180px;
+  height: 100px;
+  margin-bottom: 5px;
+  position: relative;
+  box-shadow: 1px 1px 10px 3px rgb(222, 221, 221);
+}
+
+#search {
+  margin: 0;
+  width: 100%;
+  max-width: auto;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+#search::placeholder {
+  color: #999;
+}
+
+#search:focus {
+  border: none;
+  box-shadow: 0 0 0 1px #1e90ff;
+}
+
+#search-container {
+  position: relative;
+  z-index: 1000;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+
+#search-container ul {
+  position: absolute;
+  top: 100%;
+  /* Rest of your styles... */
+}
+
+/* Style the unordered list */
+ul {
+  list-style-type: none;
+  /* Remove bullet points */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margin */
+  background-color: #373535;
+  /* Set a background color */
+  max-height: 200px;
+  /* Limit the height of the list */
+  overflow-y: auto;
+  /* Add a scrollbar if necessary */
+  border: 1px solid #ddd;
+  /* Add a border */
+  width: 100%;
+  /* Make the list take up the full width of its container */
+  border-radius: 5px;
+  position: relative;
+  background: linear-gradient(to bottom, rgb(156, 156, 156), rgba(241, 241, 241, 0.5));
+}
+
+/* Style the list items */
+ul li {
+  padding: 10px;
+  /* Add some padding */
+  border-bottom: 1px solid #ddd;
+  /* Add a border between items */
+
+}
+
+/* Style the list items on hover */
+ul li:hover {
+  background-color: #ddd;
+  /* Change the background color on hover */
+}
+
+#recommendations {
+  width: 100%;
+  max-width: 450px;
+  margin-left: 10px;
+  margin-top: 40px;
+  padding: 1px;
+  box-sizing: border-box;
+  background-color: rgba(20, 47, 201, 0);
+  border-radius: 10px;
+  box-shadow: 1px 5px 5px 5px rgb(222, 221, 221);
+
+}
+
+#recommendations-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.star {
+  font-size: 2em;
+  /* Adjust as needed */
+  color: gold;
+  /* Color when not hovered */
+  /* border: 1px solid gold; */
+  transition: color 0.3s ease;
+}
+
+.star:hover {
+  color: gold;
+  /* Color when hovered */
+  cursor: pointer;
+}
+
+#navbar {
+  box-shadow: 0 4px 10px 0 rgb(227, 225, 225);
+  height: 100%;
+  width: 2%;
+
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+  display: none;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  position: fixed;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.r-movie-card {
+  flex: 0 0 50%;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 200px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.r-movie-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.r-movie-card p {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+#tags {
+  padding: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgb(247, 244, 244);
+  padding: 10px;
+  font-size: 12px;
+  margin-bottom: 1px;
+  margin-left: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.tag span {
+  margin-right: 12px;
+  color: rgb(46, 46, 46);
+}
+
+.tag div {
+  display: block;
+}
+
+.tag span:last-child {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  margin-right: 0;
+  cursor: pointer;
+  color: red;
+}
+
+.tag:hover span:last-child {
+  opacity: 1;
+}
+
+#topbar {
+  position: fixed;
+  /* This will make the topbar stay at the top of the page even when you scroll */
+  top: 0;
+  /* This positions the topbar at the very top of the page */
+  left: 0;
+  /* This positions the topbar at the very left of the page */
+  width: 100%;
+  /* This makes the topbar span the full width of the page */
+  height: 50px;
+  /* You can adjust this to change the height of the topbar */
+  background-color: #333;
+  /* Change this to your preferred color */
+  color: white;
+  /* Change this to your preferred color */
+  text-align: center;
+  /* This centers the text/content in the topbar */
+  line-height: 50px;
+  /* This vertically centers the text/content in the topbar */
+
+  box-shadow: 0px 8px 6px rgba(105, 104, 104, 0.9);
+
+}
+
+#logo {
+  position: absolute;
+  top: 15px;
+  right: 70px;
+  transform: translateY(-50%);
+  height: 90%;
+  width: auto;
+  transform: scale(3.5);
+}
+
+#leftbar {
+  position: fixed;
+  margin-top: 90px;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 50px;
+  /* This is the sensitive area for hover */
+  overflow: hidden;
+  transition: width 0.2s ease-in-out, opacity 0.5s ease-in-out;
+  z-index: 1000;
+  border-radius: 0px 5px 5px 0px;
+  box-shadow: 1px 1px 5px 1px rgb(222, 221, 221);
+  opacity: 1;
+}
+
+
+#leftbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+#leftbar img {
+  width: 35px;
+  height: 35px;
+  mix-blend-mode: color-burn;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+}
+
+#leftbar a[href*="facebook.com"] img {
+  width: 42px;
+  /* Adjust as needed */
+  height: 42px;
+  /* Adjust as needed */
+}
+
+#leftbar a:not([href]) {
+  cursor: pointer;
+}
+
+.icons {
+  transition: transform 0.3s ease;
+}
+
+.icons:hover {
+  transform: scale(1.3);
+}
+
+.recommend_message {
+  text-align: center;
+}
+
+
+#tour-guide {
+
+  opacity: 0;
+  position: absolute;
+  /* Positions the tour guide relative to the nearest positioned ancestor */
+  top: 150px;
+  /* Adjust as needed to position the tour guide next to the search box */
+  left: 600px;
+  /* Adjust as needed to position the tour guide next to the search box */
+  z-index: 100002;
+  /* Places the tour guide above everything else */
+  background-color: rgb(230, 240, 187);
+  /* Makes the tour guide stand out against the blurred background */
+  padding: 20px;
+  border: 1px dashed;
+  box-shadow: 1px 1px 1px 1px rgb(106, 102, 102);
+  border-radius: 5px;
+  width: auto;
+  transition: opacity 1s ease-in-out;
+}
+
+#guide-content {
+  max-width: 500px;
+  /* adjust this value as needed */
+  word-wrap: break-word;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  /* semi-transparent black */
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  /* this should be higher than the z-index of other elements */
+  pointer-events: none;
+  transition: opacity 2s ease-in-out;
+
+}
+
+#overlay.active {
+  pointer-events: auto;
+}
+
+.loading-circle {
+  display: none;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#carousel-control {
+  display: right;
+  /* ... rest of your styles ... */
+}
+
+
+#carousel-control {
+  position: absolute;
+  margin-top: 40px;
+  margin-right: 10px;
+  top: 10px;
+  /* adjust as needed */
+  right: 10px;
+  /* adjust as needed */
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+#carousel:hover #carousel-control {
+  opacity: 1;
+}
+
+#movie-count {
+  font-weight: bold;
+  margin-top: 0px;
+  /* adjust as needed */
+  text-align: right;
+  margin-right: 40px;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+#countContainer {
+  border-top: 0.5px solid grey;
+  padding: 1px;
+  height: 25px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #ededed;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #4ddb34;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+.loading-label {
+  color: black;
+  text-shadow: -4px -1px 26px 9px rgb(109, 211, 176);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#settings {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f0f0f0;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  display: none;
+}
+
+#settings.open {
+  display: flex;
+  flex-direction: column;
+}
+
+#settings .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: justify;
+  padding: 0px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: rgba(27, 139, 220, 0.5);
+  /* semi-transparent black */
+  border-bottom: 1px solid #ccc;
+}
+
+#settings h2 {
+  margin: 5px;
+  font-size: 20px;
+  color: #333;
+}
+
+#settings #close {
+  margin-bottom: 0.5px;
+  background-color: #d6d6d6;
+  /* red */
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#settings #close:hover {
+  background-color: #bc3d3a;
+  /* dark red */
+}
+
+.setting {
+  display: flex;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#settborder {
+  border-radius: 5px;
+  border: 2px solid rgb(148, 148, 148, 0.3);
+  padding: 10px;
+}
+
+.setting label {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-right: 10px;
+}
+
+.setting select,
+.setting input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+.setting input[type="checkbox"] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  background: #c6c6c6;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+  transition: .5s;
+}
+
+.setting input:checked[type="checkbox"] {
+  background: #1ce960;
+}
+
+.setting input[type="checkbox"]:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  transition: .5s;
+}
+
+.setting input:checked[type="checkbox"]:before {
+  left: 20px;
+}
+
+#numMovies {
+  height: 30px;
+  width: 60px;
+}
