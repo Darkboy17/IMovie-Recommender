@@ -35,7 +35,7 @@ python web2py.py
 ```
 5) A web2py Web Framework window will appear as shown below.
 
-![webp2ywindow](https://github.com/Darkboy17/IMovie-Recommender/assets/26376179/dbcfe7ca-ea3c-4431-b5b6-f0075ec1f06f)
+![webp2ywindow](https://github.com/Darkboy17/IMovie-Recommender/assets/26376179/804b96f3-54fd-4e18-86ab-64b87457eda0)
 
 6) For password, type 'root' or anything you prefer.
 7) Click "start server" and a new window will be loaded on your browser of choice.
