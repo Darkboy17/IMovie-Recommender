@@ -10,7 +10,7 @@ It uses an algorithm called "Cosine Similarity" from a plethora of recommendatio
 - Personalized movie recommendations
 - User-friendly interface
 - A movie carousel
-- Setting Page
+- Settings Page
 
 ## Screenshot
 ![IM_recommend_screenshot](https://github.com/Darkboy17/IMovie-Recommender/assets/26376179/90e987ab-5523-467a-bd12-29b8f31e91db)
