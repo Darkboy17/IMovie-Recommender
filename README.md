@@ -2,7 +2,7 @@
 
 IMovie Recommender is a movie recommendation system built with the web2py framework using ML. For the backend, libaries such as pandas, numpy was used in Python for the calculation of recommendations. 
 For the front-end, HTML/CSS/JS was used. 
-It uses an algorithm called "Cosine Similarity" from a plethora of recommendation algorithms, to provide users with movie recommendations based on the ratings of a movie.
+It uses an algorithm called "Cosine Similarity" from a plethora of recommendation algorithms, to provide users with movie recommendations based on the ratings of one or multiple movies.
 
 ## Features
 
